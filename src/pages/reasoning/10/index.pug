@@ -1,0 +1,25 @@
+extends @pug/base
+
+append globals
+	- pageName = 'reasoning'
+	- title = '“Все начинается с любви”'
+	- description = '&nbsp;'
+	- image = `${data.general.baseDir}assets/images/reasoning/share.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+reasoning(
+			data23.reasonings.about_book.left_side.image,
+			data23.reasonings.about_book.right_side.title,
+			data23.reasonings.about_book.right_side.text1,
+			data23.reasonings.about_book.right_side.text2,
+			data23.reasonings.about_book.right_side.text3,
+			data23.reasonings.about_book.right_side.text4,
+			data23.reasonings.about_book.right_side.text5,
+			data23.reasonings.about_book.right_side.text7,
+			data23.reasonings.about_book.right_side.text8,
+			data23.reasonings.about_book.right_side.text9,
+		)

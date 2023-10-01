@@ -1,0 +1,68 @@
+.sharing {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+	color: $color-white;
+
+	&__text {
+		margin-right: vc(25);
+		font-family: $font-roboto-flex;
+		font-size: vc(18);
+		line-height: vc(35);
+
+		@include devices {
+			margin-right: vc(0);
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		width: vc(189);
+
+		@include devices {
+			margin: 0 auto;
+			width: vc(130);
+		}
+	}
+
+	&__link {
+		display: inline-block;
+		width: vc(20);
+		height: vc(20);
+		min-width: vc(20);
+
+		@include devices {
+			&--vk {
+				width: vc(17.71);
+				height: vc(10.02);
+				min-width: vc(17.71);
+			}
+
+			&--ok {
+				width: vc(10.82);
+				height: vc(17.11);
+				min-width: vc(10.82);
+			}
+
+			&--tg {
+				width: vc(16.05);
+				height: vc(13.51);
+				min-width: vc(16.05);
+			}
+
+			&--wa {
+				width: vc(17.05);
+				height: vc(17.05);
+				min-width: vc(17.05);
+			}
+		}
+	}
+
+	@include devices {
+		flex-direction: column;
+	}
+}

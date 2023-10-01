@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Ане»'
+	- description = 'Утро начинается с любви… Я смотрю на твой красивый профиль'
+	- image = `${data.general.baseDir}assets/images/poem/6.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem6)

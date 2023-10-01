@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Молитва»'
+	- description = 'Господи, спаси и сохрани… Окажи нам божескую милость.'
+	- image = `${data.general.baseDir}assets/images/poem/10.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem10)

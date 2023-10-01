@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«И гений трижды может быть ничтожен…»'
+	- description = 'И гений трижды может быть ничтожен: Когда он дружбой выгоду итожит'
+	- image = `${data.general.baseDir}assets/images/poem/29.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem29)

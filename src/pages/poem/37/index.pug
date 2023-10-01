@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Ничего у нас с тобой не выйдет...»'
+	- description = 'Ничего у нас не выйдет. Мы из разных стай.'
+	- image = `${data.general.baseDir}assets/images/poem/37.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem37)

@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Признание в любви»'
+	- description = 'Признаю́сь в любви читателям России, У кого всю жизнь я доброте учусь.'
+	- image = `${data.general.baseDir}assets/images/poem/2.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem2)

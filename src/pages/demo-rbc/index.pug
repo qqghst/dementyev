@@ -1,0 +1,15 @@
+extends @pug/base
+
+append globals
+	- pageName = 'demo'
+
+append vars
+
+block content
+	+router(pageName)
+		.demo-rbc
+			include @components/rbc/header/header
+			h1 demo page
+			a(href="./article") Index page
+			include @components/rbc/footer/footer
+	include @components/analytics/analytics

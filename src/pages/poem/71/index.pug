@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Отчий дом»'
+	- description = '\'Радость или грусть нас ждут потом… Но всему начало – отчий дом.'
+	- image = `${data.general.baseDir}assets/images/poem/71.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem71)

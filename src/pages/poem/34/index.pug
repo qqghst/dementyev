@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Мужские слезы дефицит…»'
+	- description = 'Мужские слезы дефицит. У женщин проще со слезами.'
+	- image = `${data.general.baseDir}assets/images/poem/34.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem34)

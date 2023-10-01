@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Я в дружбе верен, как собака…»'
+	- description = 'Валерию Чернов. Я в дружбе верен, как собака.'
+	- image = `${data.general.baseDir}assets/images/poem/35.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem35)

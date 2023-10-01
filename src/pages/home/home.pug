@@ -1,0 +1,87 @@
+append vars
+	-
+		var nav = [
+			{
+				id: 1,
+				active: false,
+				text: 'Биография поэта',
+				link: `${baseDir}biography/biography-1928-1941/`
+			}, {
+				id: 2,
+				active: false,
+				text: 'Мысли и рассуждения',
+				link: `${baseDir}reasoning/1/`
+			}, {
+				id: 3,
+				active: false,
+				text: 'Стихи и цитаты',
+				link: `${baseDir}poem/1/`
+			}, {
+				id: 4,
+				active: false,
+				text: 'Виртуальный тур по Твери и Дому Поэзии Андрея Дементьева',
+				link: `${baseDir}dement/`
+			}, {
+				id: 5,
+				active: false,
+				text: 'Конкурс стихов молодых поэтов',
+				link: `${baseDir}competition/`
+			}, {
+				id: 6,
+				active: false,
+				text: 'Концерт к юбилею',
+				link: `${baseDir}concert/`
+			}
+		]
+
++b.home.js-home
+	include @components/header/header
+
+	+e.container
+		+e.sidebar.sidebar__
+			+e.header
+				+e.logo.logo__
+					+e.A.link(href="/")
+						+picture({
+							path: `${baseDir}assets/images/logo`,
+							ext: "svg",
+							onlyDesktop: false,
+							retina: true,
+							mobile: true,
+						})
+
+				+e.NAV.nav.nav__.js-full-menu
+					ul
+						each item in nav
+							li(class=item.active ? "_active" : undefined)
+								a(href=(item.link ? item.link : '#') target=(item.id === 4 ? "_blank" : undefined))!= item.text
+
+			+e.FOOTER.footer.footer__
+				+e.partners.partners__
+					+e.A.link--aif(href="https://aif.ru/" target="_blank")
+						+svg('aif')
+					+e.A.link--pfki(href="https://xn--80aeeqaabljrdbg6a3ahhcl4ay9hsa.xn--p1ai/" target="_blank")
+						+svg('pfki')
+					+e.A.link--poetry-house(href="http://www.dompoezii-tver.ru/" target="_blank")
+						+svg('poetry-house')
+				+e.sharing
+					+sharing
+				+e.rules.rules__ © 2023. Аргументы и Факты все права защищены.
+
+		+e.content
+			+e.signature.signature__
+				+e.text#target!= '“Все начинается&nbsp;<br> с любви”'
+				+picture({
+					path: `${baseDir}assets/images/signature`,
+					ext: "svg",
+					onlyDesktop: false,
+					retina: true,
+					mobile: true,
+				})
+
+			+picture({
+				path: `${baseDir}assets/images/home/andrey-dementiev`,
+				ext: "jpg",
+				retina: true,
+				mobile: true,
+			})

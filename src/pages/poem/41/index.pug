@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Нас с тобой венчал Иерусалим…»'
+	- description = '\'Нас с тобой венчал Иерусалим. И пока ты рядом – жизнь неповторима.'
+	- image = `${data.general.baseDir}assets/images/poem/41.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem41)

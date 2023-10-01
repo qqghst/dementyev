@@ -1,0 +1,13 @@
+mixin sharing(text, url)
+	+b.sharing
+		if (text)
+			+e.text Поделиться:
+		+e.list
+			+e.BUTTON.link--vk(type="button" data-social="vk" data-url!= url ? url : undefined)
+				+svg('vk')
+			+e.BUTTON.link--ok(type="button" data-social="ok" data-url!= url ? url : undefined)
+				+svg('ok')
+			+e.BUTTON.link--tg(type="button" data-social="tg" data-url!= url ? url : undefined)
+				+svg('tg')
+			+e.BUTTON.link--wa(type="button" data-social="whatsapp" data-url!= url ? url : undefined)
+				+svg('wa')

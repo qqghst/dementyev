@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Если женщина исчезает…»'
+	- description = 'Если женщина исчезает, Позабыв, что она твой друг'
+	- image = `${data.general.baseDir}assets/images/poem/19.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem19)

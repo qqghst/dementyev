@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Тверь»'
+	- description = 'Здесь влюбился я в Волгу навеки, И отсюда мой начался род'
+	- image = `${data.general.baseDir}assets/images/poem/9.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem9)

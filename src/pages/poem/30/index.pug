@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Мы скаковые лошади азарта…»'
+	- description = 'Мы скаковые лошади азарта. На нас еще немало ставят карт.'
+	- image = `${data.general.baseDir}assets/images/poem/30.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem30)

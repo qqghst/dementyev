@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Вот и все. Уже вещи собраны…»'
+	- description = 'Руки мамы… Люблю их с детства. Где б дорога моя ни шла – Никуда мне от них не деться,'
+	- image = `${data.general.baseDir}assets/images/poem/72.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem72)

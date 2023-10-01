@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Одни по воротам целят…»'
+	- description = 'Одни по воротам целят Другие играют в пас.'
+	- image = `${data.general.baseDir}assets/images/poem/28.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem28)

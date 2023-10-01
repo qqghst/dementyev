@@ -1,0 +1,45 @@
+- const data23 = require('./data.js').default;
+
+mixin reasoning(image, title, ...texts )
+	.reasoning
+		.reasoning__container
+			.left-side
+				//- img.img(src=image alt="")
+				+picture({
+					path: `${baseDir}assets/images/reasoning/9`,
+					ext: 'jpg',
+					retina: true,
+					mobile: true,
+				}).img
+				.links-container
+					button.drop-down#dropDown
+						+svg('drop-down')
+					.links.reasoning
+						each item, key in data23.links
+							a(href=`${baseDir}reasoning/${data23.links[key].href}/` class=data23.links[key].active ? 'active' : '')!= data23.links[key].text
+						+svg('signature')
+			.right-side
+				.right-side__scroller
+					.title.reasoning!= title
+					each text in texts
+						.paragraph.reasoning!= text.paragraph
+						.year.reasoning!= text.year
+						if index !== texts.length - 1
+							.line
+								hr
+								+svg('quotes')
+								hr
+			.arrow-bottom
+				+svg('arrow-bottom')
+
+	+b.FOOTER.footer
+		+e.partners.partners__
+			+e.A.link--aif(href="https://aif.ru" target="_blank")
+				+svg('aif')
+			+e.A.link--pfki(href="https://xn--80aeeqaabljrdbg6a3ahhcl4ay9hsa.xn--p1ai/" target="_blank")
+				+svg('pfki')
+			+e.A.link--poetry-house(href="http://www.dompoezii-tver.ru/" target="_blank")
+				+svg('poetry-house')
+		+e.sharing
+			+sharing
+		+e.rules.rules__ © 2023. Аргументы и Факты все права защищены.

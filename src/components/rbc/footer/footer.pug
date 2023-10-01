@@ -1,0 +1,44 @@
++b.footer.footer__mobile-block.for-devices#footer-mobile-block
+	+e.BUTTON.button-up.for-devices(type="button")
+		+svg('arrow-up')
+
+	+b.social
+		.icon.for-desktop
+			+svg('heart')
+		+e.wrapper
+			+e.text Поделиться:
+			+sharing('vk').icon
+			+sharing('tg').icon
+			+sharing('ok').icon
+
++b.FOOTER.footer(data-aos="fade" data-aos-delay="200" data-aos-offset="-200")
+	+e.container
+		+e.BUTTON.button-up.for-devices(type="button")
+			+svg('arrow-up')
+
+		+b.about
+			.icon.for-desktop
+				+svg('i')
+			+e.SPAN.advertising.for-desktop Реклама
+			+e.SPAN.advertising.for-devices Команда проекта
+			+e.wrapper
+				+e.BUTTON.close.for-devices(type="button")
+					| Close
+					+svg('close')
+				+e.content
+					h2 команда проекта
+					p Директор спецпроектов: Полина Абдуллина <br>Руководитель digital направления: Михаил Быков <br>Group head: Виктория Суворова <br>Ведущий дизайнер: Мария Егорова <br>Дизайнер: Дарья Островская <br>Технический менеджер: Антон Шереметьев<br>Фотограф: Александр Калинин <br>Креативный директор, интервью: Анастасия Каменская <br>Стиль: Лада Арзуманова <br>Груминг: Светлана Житкевич <br>Продюсер: Карина Насибулова
+					p.for-desktop © АО «РОСБИЗНЕСКОНСАЛТИНГ», 1995–2023
+
+		+e.subtext.for-devices Совместный проект
+		+e.subtext.for-devices &copy;&nbsp;АО&nbsp;&laquo;РОСБИЗНЕСКОНСАЛТИНГ&raquo;, 1995&ndash;2023
+		+e.subtext.for-devices #[span Реклама. текст для рекламы тестовый]
+
+		+b.social
+			.icon.for-desktop
+				+svg('heart')
+			+e.wrapper
+				+e.text Поделиться:
+				+sharing('vk').icon
+				+sharing('tg').icon
+				+sharing('ok').icon

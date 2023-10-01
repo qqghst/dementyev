@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Нет женщин нелюбимых»'
+	- description = 'Нет женщин нелюбимых, Невстреченные есть'
+	- image = `${data.general.baseDir}assets/images/poem/12.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem12)

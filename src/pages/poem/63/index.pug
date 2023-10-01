@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Люблю я людей смелых…»'
+	- description = 'Искренних, как гроза. Если уж накипело,- То прямо в глаза.'
+	- image = `${data.general.baseDir}assets/images/poem/63.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem63)

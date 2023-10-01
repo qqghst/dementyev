@@ -1,0 +1,285 @@
+.competition {
+	&__container {
+		display: flex;
+		margin: 0 auto;
+		width: 100%;
+		max-width: vc(1600);
+		gap: 0 vc(88);
+
+		@include devices {
+			flex-direction: column;
+		}
+	}
+
+	&__col {
+		&--right {
+			flex: 1;
+			padding-top: vc(64);
+			padding-right: vc(18);
+			padding-bottom: vc(43);
+
+			@include devices {
+				padding-top: vc(30);
+				padding-right: vc(0);
+				padding-bottom: vc(0);
+			}
+		}
+	}
+
+	&__pictures {
+		position: sticky;
+		top: 0;
+		width: vc(728);
+		height: var(--vh);
+		max-width: vc(728);
+
+		@include devices {
+			width: 100%;
+			max-width: 100%;
+		}
+	}
+
+	&__picture {
+		position: absolute;
+		opacity: 0;
+		transition: 0.35s;
+		inset: 0;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: top left;
+		}
+
+		&._show {
+			z-index: 1;
+			opacity: 1;
+		}
+	}
+
+	&__title {
+		font-family: $font-cormorant-garamond;
+		font-weight: 700;
+		font-size: vc(40);
+		line-height: vc(58);
+		color: $color-black;
+
+		&:not(:last-child) {
+			margin-bottom: vc(16);
+		}
+
+		br {
+			display: none;
+		}
+
+		@include devices {
+			padding: 0 vc(10);
+			font-size: vc(25);
+			line-height: vc(26);
+
+			br {
+				display: block;
+			}
+		}
+	}
+
+	&__list {
+		display: grid;
+		grid-gap: vc(30);
+		grid-template-columns: 1fr 1fr;
+
+		@include devices {
+			grid-template-columns: 1fr;
+			padding: 0 vc(10);
+		}
+	}
+
+	&-item {
+		min-width: vc(368);
+
+		&__inner {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			border: vc(1) solid $color-rodeo-dust-2;
+			padding: vc(24) vc(22) vc(12);
+			height: 100%;
+			font-family: $font-cormorant-garamond;
+			text-align: center;
+		}
+
+		&__title {
+			margin: 0 auto;
+			margin-bottom: vc(11);
+			max-width: vc(318);
+			font-weight: 700;
+			font-size: vc(24);
+			line-height: vc(26);
+			color: $color-blue;
+		}
+
+		&__text {
+			margin: 0 auto;
+			max-width: vc(323);
+			font-weight: 500;
+			font-style: italic;
+			font-size: vc(20);
+			line-height: vc(25);
+		}
+
+		&__dots {
+			margin: vc(18) auto vc(15);
+			width: vc(39);
+			height: vc(6);
+		}
+
+		&__footer {
+			display: flex;
+			flex-direction: column;
+			margin-top: auto;
+			width: 100%;
+		}
+
+		&__author {
+			margin-bottom: vc(4);
+			font-family: $font-roboto-flex;
+			font-size: vc(16);
+			line-height: vc(30);
+			color: $color-blue;
+		}
+
+		&__sharing {
+			display: flex;
+			align-items: center;
+			width: 100%;
+
+			.sharing {
+				color: $color-blue;
+
+				&__list {
+					width: initial;
+					gap: vc(25);
+				}
+			}
+
+			@include devices {
+				flex-direction: column;
+				gap: vc(30);
+			}
+		}
+
+		&._tall {
+			grid-row: span 2;
+		}
+
+		@include devices {
+			min-width: 100%;
+		}
+	}
+
+	@include devices {
+		padding-bottom: vc(42);
+	}
+}
+
+.vote {
+	$root: &;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	margin-right: vc(-11);
+	border-radius: vc(100);
+	height: vc(38);
+	font-family: $font-roboto-flex;
+	font-weight: 500;
+	line-height: vc(35);
+	white-space: nowrap;
+	color: $color-white;
+	background: $color-blue;
+
+	&__text {
+		position: relative;
+		z-index: 0;
+		margin-right: vc(-118.6);
+		border-top-left-radius: vc(100);
+		border-bottom-left-radius: vc(100);
+		padding-left: vc(12);
+		font-size: vc(14);
+		background: $color-blue;
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.35s;
+
+		@include devices {
+			margin-right: vc(0);
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	&__counter {
+		position: relative;
+		z-index: 1;
+		border-radius: vc(100);
+		width: vc(38);
+		min-width: vc(38);
+		font-size: vc(16);
+		background: $color-blue;
+		transform: translateX(-0.1vw);
+	}
+
+	&:hover {
+		padding-right: vc(12);
+
+		// margin-left: vc(20);
+		width: auto;
+
+		#{$root}__text {
+			margin-right: vc(0);
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+
+.application {
+	$root: &;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: vc(62);
+	border-radius: vc(100);
+	font-family: $font-roboto-flex;
+	font-weight: 500;
+	line-height: vc(35);
+	white-space: nowrap;
+
+	&__text {
+		border-radius: vc(100);
+		padding: vc(2) vc(22);
+		font-size: vc(14);
+		color: $color-white;
+		background: $color-blue;
+	}
+
+	@include devices {
+		padding: 0 vc(10);
+	}
+
+	// &:hover {
+	// 	padding-right: vc(12);
+
+	// 	// margin-left: vc(20);
+	// 	width: auto;
+
+	// 	#{$root}__text {
+	// 		margin-right: vc(0);
+	// 		opacity: 1;
+	// 		visibility: visible;
+	// 	}
+	// }
+}

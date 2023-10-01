@@ -1,0 +1,10 @@
+extends @pug/base
+
+append globals
+	- pageName = 'tour'
+
+append vars
+
+block content
+	+router(pageName)
+	iframe(src="/dement/index.html" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" width="100%" height="640" align="center")

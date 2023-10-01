@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Пока мы боль чужую чувствуем…»'
+	- description = 'Пока мы боль чужую чувствуем, Пока живет в нас сострадание'
+	- image = `${data.general.baseDir}assets/images/poem/56.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem56)

@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Не оставляйте матерей одних…»'
+	- description = 'Не оставляйте матерей одних, Они от одиночества стареют.'
+	- image = `${data.general.baseDir}assets/images/poem/49.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem49)

@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«До чего же мудры́…»'
+	- description = 'До чего же мудры́ Наши русские сказки.'
+	- image = `${data.general.baseDir}assets/images/poem/47.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem47)

@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Как важно вовремя успеть…»'
+	- description = 'Как важно вовремя успеть Сказать кому-то слово доброе.'
+	- image = `${data.general.baseDir}assets/images/poem/64.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem64)

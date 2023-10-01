@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«На фоне бедности российской…»'
+	- description = 'На фоне бедности российской<br>Постыдна роскошь торгашей.'
+	- image = `${data.general.baseDir}assets/images/poem/46.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem46)

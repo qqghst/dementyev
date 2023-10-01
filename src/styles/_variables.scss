@@ -1,0 +1,25 @@
+// COLORS
+$color-black: #000;
+$color-white: #fff;
+$color-blue: #005db0;
+$color-rodeo-dust: #cbb59c;
+$color-rodeo-dust-2: #cab59b;
+$color-gold: #a27b2a;
+
+// FONTS
+$font-roboto-flex: 'RobotoFlex', Arial, sans-serif;
+$font-cormorant-garamond: 'CormorantGaramond', Arial, sans-serif;
+
+// TRANSITIONS
+$transition-duration: 0.35s;
+$transition-timing-function: ease;
+$transition: $transition-duration $transition-timing-function;
+
+// SETTINGS
+$desktop-xxl: 2560;
+$desktop-xl: 1920;
+$desktop-lg: 1680;
+$desktop-md: 1440;
+$desktop-sm: 1366;
+$desktop-xs: 1280;
+$desktop: 1024;

@@ -1,0 +1,9 @@
+@import '@components/rbc/footer/footer';
+@import '@components/rbc/header/header';
+
+.demo-rbc {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	min-height: 100vh;
+}

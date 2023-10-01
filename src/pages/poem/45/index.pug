@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«У меня от хамства нет защиты…»'
+	- description = 'У меня от хамства нет защиты. И на этот раз оно сильней.'
+	- image = `${data.general.baseDir}assets/images/poem/45.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem45)

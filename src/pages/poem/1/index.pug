@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Родной язык – божественное чудо…»'
+	- description = 'Родной язык – божественное чудо. Он нас не предавал и не предаст.'
+	- image = `${data.general.baseDir}assets/images/poem/1.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem1)

@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Я думал, что жизнь моя будет долгой…»'
+	- description = 'Я думал, что жизнь моя будет долгой И безмятежной, как наша Волга.'
+	- image = `${data.general.baseDir}assets/images/poem/69.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem69)

@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Годы — как кочующие звезды…»'
+	- description = 'Годы — как кочующие звезды, Что глядят прозрачно с вышины.'
+	- image = `${data.general.baseDir}assets/images/poem/75.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem75)

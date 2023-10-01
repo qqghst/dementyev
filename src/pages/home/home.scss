@@ -1,0 +1,311 @@
+.home {
+	$root: &;
+
+	&__container {
+		position: relative;
+		display: flex;
+		height: 100vh;
+	}
+
+	&__sidebar {
+		flex: 0 0 vc(285);
+
+		// flex-grow: 1;
+		padding: vc(28) vc(23) vc(20) 0;
+		min-width: vc(285);
+		background: $color-blue;
+	}
+
+	&__content {
+		position: relative;
+		flex: auto;
+		overflow: hidden;
+
+		// width: 121vh;
+
+		picture,
+		img {
+			height: 100%;
+		}
+
+		@include devices {
+			width: 100%;
+
+			picture {
+				&::after {
+					content: '';
+					position: absolute;
+					left: 0;
+					bottom: -2px;
+					width: 100%;
+					height: vc(200);
+					background: linear-gradient(360deg, #fff 1.78%, rgba(255, 255, 255, 0) 34.76%);
+				}
+			}
+		}
+	}
+
+	&__signature {
+		position: absolute;
+		right: vc(54);
+		bottom: vc(63);
+		z-index: 2;
+
+		&::after {
+			content: '';
+			position: absolute;
+			right: vc(-41);
+			bottom: vc(-145);
+			z-index: -1;
+			border-radius: 100%;
+			width: vc(570);
+			height: vc(570);
+			min-width: vc(570);
+			background: $color-white;
+			filter: blur(100px);
+		}
+	}
+
+	.header {
+		display: none;
+
+		@include devices {
+			display: block;
+		}
+	}
+
+	@include devices {
+		&__container {
+			flex-direction: column-reverse;
+			justify-content: flex-end;
+			height: initial;
+		}
+
+		&__sidebar {
+			padding: 0;
+			background: $color-white;
+		}
+
+		&__content {
+			display: flex;
+			flex: initial;
+			flex-direction: column-reverse;
+			justify-content: flex-end;
+
+			> picture {
+				margin-top: vc(-6);
+				width: 100%;
+				height: vc(338);
+			}
+		}
+
+		&__signature {
+			position: relative;
+			inset: 0;
+
+			&::after {
+				display: none;
+			}
+
+			img {
+				position: relative;
+				z-index: 1;
+			}
+		}
+
+		.signature {
+			z-index: 0;
+			padding-bottom: vc(15.29);
+
+			&__text {
+				font-size: vc(30);
+				line-height: vc(38.8);
+				text-align: center;
+
+				br {
+					display: none;
+				}
+			}
+
+			picture {
+				position: initial;
+				margin: 0 auto;
+				width: vc(136.4);
+				height: vc(61.71);
+				inset: 0;
+			}
+		}
+	}
+}
+
+.sidebar {
+	$root: &;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	// align-items: flex-start;
+
+	&__header {
+		@include devices {
+			display: none;
+		}
+	}
+
+	&__footer {
+		margin-top: auto;
+	}
+
+	&__logo {
+		margin: 0 auto vc(50);
+		max-width: vc(162.6);
+	}
+
+	&__nav {
+		padding-left: vc(23);
+		font-size: vc(28);
+		line-height: vc(34);
+
+		ul {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: vc(15);
+
+			a:hover {
+				color: $color-rodeo-dust-2;
+			}
+		}
+	}
+
+	@include devices {
+		flex: initial;
+
+		&__footer {
+			margin-top: 0;
+		}
+	}
+}
+
+.signature {
+	&__link {
+		display: inline-block;
+	}
+
+	&__text {
+		font-family: $font-cormorant-garamond;
+		font-weight: 500;
+		font-style: italic;
+		font-size: vc(62.5);
+		line-height: vc(69);
+		color: $color-blue;
+	}
+
+	picture {
+		position: relative;
+		right: vc(70);
+		bottom: vc(0);
+		display: block;
+		margin-left: auto;
+		width: vc(215);
+	}
+}
+
+.footer {
+	display: none;
+	width: 100%;
+	background: $color-blue;
+
+	&__partners {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: 0 auto vc(45);
+		color: $color-rodeo-dust-2;
+		gap: vc(20);
+
+		.partners {
+			&__link {
+				&--aif {
+					width: vc(132);
+					height: vc(27);
+				}
+
+				&--pfki {
+					width: vc(142);
+					height: vc(38);
+				}
+
+				&--poetry-house {
+					width: vc(115);
+					height: vc(74);
+				}
+			}
+		}
+	}
+
+	&__sharing {
+		margin-bottom: vc(24);
+
+		.sharing {
+			&__list {
+				width: vc(169);
+			}
+		}
+	}
+
+	&__rules {
+		margin: 0 auto;
+		width: vc(170);
+		font-weight: 300;
+		font-size: vc(12);
+		line-height: vc(18);
+		text-align: center;
+		opacity: 0.7;
+	}
+
+	&.sidebar__footer {
+		display: block;
+	}
+
+	@include devices {
+		display: block;
+		padding: vc(8) vc(10) vc(17);
+
+		&__partners {
+			flex-direction: row;
+			justify-content: space-between;
+			margin-bottom: vc(18);
+			gap: 0;
+
+			.partners {
+				&__link {
+					&--aif {
+						width: vc(90.66);
+						height: vc(18.65);
+					}
+
+					&--pfki {
+						width: vc(97.61);
+						height: vc(25.32);
+					}
+
+					&--poetry-house {
+						display: initial;
+						width: vc(76);
+						height: vc(47);
+					}
+				}
+			}
+		}
+
+		&__sharing {
+			margin-bottom: vc(18);
+		}
+
+		&__rules {
+			width: 100%;
+		}
+	}
+}

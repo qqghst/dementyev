@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Хлеб»'
+	- description = 'Трудно родится хлеб. Трудно хлеб достаётся.'
+	- image = `${data.general.baseDir}assets/images/poem/68.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem68)

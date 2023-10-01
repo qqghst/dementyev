@@ -1,0 +1,51 @@
+.header {
+	margin-bottom: vc(16);
+	padding: vc(30) vc(20);
+
+	a {
+		transition: 0.4s ease-out;
+
+		@include desktop {
+			&:hover {
+				opacity: 0.5;
+			}
+		}
+	}
+
+	.container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__logo {
+		&--rbc {
+			width: vc(155);
+			height: vc(19);
+		}
+
+		&--client {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: vc(11);
+			line-height: vc(11);
+
+			svg {
+				margin-left: vc(16);
+				width: vc(57);
+				height: vc(19);
+
+				@include desktop {
+					width: vc(60);
+					height: vc(20);
+				}
+			}
+		}
+	}
+
+	@include desktop {
+		margin-bottom: vc(24);
+		padding: vc(30);
+	}
+}

@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Нас старят не годы, а беды…»'
+	- description = 'Нас старят не годы, а беды И боль от нежданных утрат.'
+	- image = `${data.general.baseDir}assets/images/poem/17.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem17)

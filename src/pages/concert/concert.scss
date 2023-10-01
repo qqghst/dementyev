@@ -1,0 +1,96 @@
+.concert {
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+
+	&__bg {
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&__man {
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+		z-index: 2;
+		width: auto;
+		height: 71vh;
+		transform: translate3d(0, 0, 0);
+
+		@include devices {
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			width: vc(280);
+			height: auto;
+		}
+	}
+
+	&__block {
+		position: absolute;
+		right: 52%;
+		top: 50%;
+		z-index: 1;
+		border-radius: 50%;
+		padding-top: vc(100);
+		padding-left: vc(155);
+		width: vc(653);
+		height: vc(653);
+		font-family: $font-cormorant-garamond;
+		color: #fff;
+		background: rgba($color-blue, 0.6);
+		transform: translateY(-55%);
+		backdrop-filter: blur(10px);
+
+		@include devices {
+			position: relative;
+			right: 0;
+			top: 0;
+			margin: vc(20) auto 0;
+			padding-top: vc(50);
+			padding-left: vc(55);
+			width: vc(300);
+			height: vc(300);
+			transform: none;
+		}
+	}
+
+	&__title {
+		font-size: vc(200);
+		line-height: 0.86;
+
+		@include devices {
+			font-size: vc(80);
+		}
+	}
+
+	&__subtitle {
+		margin-bottom: vc(39);
+		font-size: vc(60);
+		line-height: 1;
+
+		@include devices {
+			margin-bottom: vc(20);
+			font-size: vc(40);
+		}
+	}
+
+	&__desc {
+		font-family: $font-roboto-flex;
+		font-weight: 300;
+		font-size: vc(45);
+
+		@include devices {
+			font-size: vc(20);
+		}
+	}
+
+	@include devices {
+		min-height: vc(570);
+	}
+}

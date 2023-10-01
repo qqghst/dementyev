@@ -1,0 +1,17 @@
+extends @pug/base
+
+append globals
+	- pageName = 'home'
+	- title = '«Всё начинается с любви». Проект к 95-летию поэта Андрея Дементьева'
+	- description = 'Андрей Дементьев для нашей страны больше чем поэт, он — поэт-гражданин, человек-легенда. Представляем его творчество через 3D-экскурсию по родине поэта и Дому поэзии Дементьева в Твери, через его мысли, стихи, историю жизни.'
+	- image = `${data.general.baseDir}assets/images/home/share.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		//include @components/header/header
+
+		include ./home/home.pug
+
+		//include @components/footer/footer

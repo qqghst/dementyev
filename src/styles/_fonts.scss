@@ -1,0 +1,21 @@
+// FontName
+// @include font-face("FontName", 500);
+// italic fonts
+// @include font-face("FontName", 500, italic);
+
+//@include font-face("RobotoFlex", 400);
+@include font-face("CormorantGaramond", 500, italic);
+@include font-face("CormorantGaramond", 600);
+@include font-face("CormorantGaramond", 600, italic);
+@include font-face("CormorantGaramond", 700);
+@include font-face("CormorantGaramond", 700, italic);
+
+@supports (font-variation-settings: normal) {
+	@font-face {
+		src: url('../assets/fonts/RobotoFlex/RobotoFlex-Regular.woff2') format('woff2 supports variations'),
+			url('../assets/fonts/RobotoFlex/RobotoFlex-Regular.woff2') format('woff2-variations');
+		font-family: 'RobotoFlex';
+		font-weight: 100 1000;
+		font-stretch: 25% 151%;
+	}
+}

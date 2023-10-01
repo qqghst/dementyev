@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Чтоб не было богатых никогда…»'
+	- description = 'Чтоб не было богатых никогда, Мы свергли их Под гром оркестров медных.'
+	- image = `${data.general.baseDir}assets/images/poem/55.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem55)

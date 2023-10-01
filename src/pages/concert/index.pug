@@ -1,0 +1,18 @@
+extends @pug/base
+
+append globals
+	- pageName = 'concert'
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+
+		+b.concert
+			+e.IMG.bg(src=`${baseDir}assets/images/concert/bg.jpg` alt="Фон")
+			+e.block
+				+e.title 18
+				+e.subtitle ноября 2023
+				+e.desc Государственный#[br]Кремлёвский дворец
+			+e.IMG.man(src=`${baseDir}assets/images/concert/man.png` alt="Андрей Дементьев")

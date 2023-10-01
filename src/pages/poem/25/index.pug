@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Лебединая верность»'
+	- description = '- Ты прости меня, любимая, За чужое зло, Что моё крыло Счастье не спасло.'
+	- image = `${data.general.baseDir}assets/images/poem/25.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem25)

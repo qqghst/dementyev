@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Я тебя теряю…»'
+	- description = 'Я тебя теряю — Как лес теряет музыку'
+	- image = `${data.general.baseDir}assets/images/poem/15.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem15)

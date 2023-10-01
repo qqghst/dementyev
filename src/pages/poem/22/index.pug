@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Прости, что жизнь прожита…»'
+	- description = 'Прости, что жизнь прожита… И в этот осенний вечер Взошла твоя красота'
+	- image = `${data.general.baseDir}assets/images/poem/22.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem22)

@@ -1,0 +1,260 @@
+.poem-section {
+	position: relative;
+	display: flex;
+	flex: 1 1;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: vc(66) 0 0;
+
+	@include devices {
+		padding: 0;
+		padding-bottom: vc(40);
+	}
+
+	/* stylelint-disable-next-line order/order */
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		border: 1px solid $color-rodeo-dust-2;
+		width: 100%;
+		max-width: vc(1182);
+
+		@include devices {
+			flex-direction: column;
+		}
+
+		/* stylelint-disable-next-line order/order */
+		.left-side {
+			flex: 0 0 vc(595);
+			max-height: vc(795);
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: top center;
+			}
+
+			@include devices {
+				flex: 1;
+				max-height: vc(400);
+			}
+		}
+
+		.right-side {
+			display: flex;
+			flex: 1 1;
+			flex-direction: column;
+			align-items: center;
+			padding: vc(65) vc(25) vc(38) vc(40);
+			text-align: center;
+
+			.text-container {
+				.poem-container {
+					overflow: scroll;
+					margin: 0 auto vc(8);
+					padding-right: vc(24);
+					max-width: vc(460);
+
+					// max-width: vc(443);
+					max-height: vc(380);
+					font-weight: 600;
+					font-style: italic;
+					line-height: vc(40);
+
+					&::-webkit-scrollbar {
+						width: vc(1);
+					}
+
+					&::-webkit-scrollbar-thumb {
+						background: $color-rodeo-dust-2;
+					}
+
+					&::-webkit-scrollbar-track {
+						margin-top: 8px;
+						margin-bottom: 8px;
+					}
+
+					@include devices {
+						overflow: hidden;
+						padding-right: 0;
+						max-height: 100%;
+					}
+				}
+
+				.signature {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					margin: 0 auto vc(28);
+					width: vc(195);
+					height: vc(88);
+
+					img {
+						left: 50%;
+					}
+
+					@include devices {
+						width: vc(139);
+						height: vc(62.88);
+					}
+				}
+
+				.sharing {
+					color: $color-black;
+
+					.sharing {
+						color: $color-black;
+					}
+				}
+			}
+
+			.poem-section-66 & {
+				padding-right: vc(10);
+				padding-left: vc(10);
+			}
+
+			@include devices {
+				padding: vc(35) vc(17);
+			}
+		}
+
+		.arrows-container-mobile {
+			position: relative;
+			height: vc(50);
+			color: #fff;
+			background: #cab59b;
+			pointer-events: none;
+
+			.prev-page {
+				position: absolute;
+				left: 6vw;
+				width: vc(66);
+				height: vc(50);
+				pointer-events: all;
+			}
+
+			.next-page {
+				position: absolute;
+				right: 6vw;
+				width: vc(66);
+				height: 100%;
+				transform: rotate(180deg);
+				pointer-events: all;
+			}
+
+			&._fixed {
+				position: fixed;
+				left: 0;
+				bottom: 0;
+				width: 100vw;
+			}
+		}
+	}
+
+	.poem {
+		&__text {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.arrows-container {
+	pointer-events: none;
+
+	.prev-page {
+		left: vc(26);
+	}
+
+	.next-page {
+		right: vc(26);
+	}
+
+	a,
+	button {
+		position: absolute;
+		top: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: vc(66);
+		height: vc(50);
+		transform: translateY(-50%);
+		pointer-events: all;
+
+		@include devices {
+			// position: static;
+			// display: flex;
+			// align-items: center;
+			// justify-content: space-between;
+			// bottom: 100%;
+			// bottom: 90vw;
+			transform: translateY(358vw);
+
+			// transform: translateY(-10%);
+		}
+	}
+
+	@include devices {
+		display: none;
+	}
+}
+
+.pagination-container {
+	display: flex;
+	align-items: center;
+	margin: 0 auto;
+	padding: vc(19) 0 vc(22);
+	max-width: vc(518);
+
+	p {
+		color: $color-black;
+	}
+
+	.prev-page-nav,
+	.next-page-nav,
+	button {
+		width: vc(51);
+		height: vc(10);
+		color: $color-rodeo-dust-2;
+	}
+
+	ul {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0 vc(15);
+	}
+
+	li {
+		padding: 0 vc(7);
+		font-family: $font-cormorant-garamond;
+		font-size: vc(30);
+		line-height: vc(58);
+		color: $color-rodeo-dust-2;
+
+		&.is-ultra-2 {
+			opacity: 0.2;
+		}
+
+		&.is-ultra-1 {
+			opacity: 0.5;
+		}
+
+		&.current {
+			position: relative;
+			top: vc(-3);
+			padding: 0 vc(12);
+			font-size: vc(50);
+			line-height: vc(58);
+			color: $color-blue;
+			opacity: 1;
+			pointer-events: none;
+		}
+	}
+
+	@include devices {
+		display: none;
+	}
+}

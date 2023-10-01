@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Не могу уйти из прошлого…»'
+	- description = 'Не могу уйти из прошлого, Разорвать живую нить…'
+	- image = `${data.general.baseDir}assets/images/poem/59.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem59)

@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Утро.»'
+	- description = 'Вот и еще один вспыхнул рассвет… Комната нежится в солнечном глянце.'
+	- image = `${data.general.baseDir}assets/images/poem/23.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem23)

@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Не приведи, Господь, мне обмануться в ком-то…»'
+	- description = 'Я все прошел – и радости, и беды, Познал измену и обиды соль…'
+	- image = `${data.general.baseDir}assets/images/poem/66.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem66)

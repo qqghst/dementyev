@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Любовь во все века неповторима.»'
+	- description = 'Любовь во все века неповторима, Хотя слова мы те же говорим.'
+	- image = `${data.general.baseDir}assets/images/poem/18.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem18)

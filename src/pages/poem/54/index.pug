@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Все суета…»'
+	- description = 'Все суета… И только жизнь превыше, Когда она достойна и чиста.'
+	- image = `${data.general.baseDir}assets/images/poem/54.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem54)

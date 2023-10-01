@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Нет без леса России…»'
+	- description = 'Нет без леса России, Без снегов и озер, Нет без сумерек синих И без розовых зорь.'
+	- image = `${data.general.baseDir}assets/images/poem/43.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem43)

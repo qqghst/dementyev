@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Сомнений снежный ком»'
+	- description = 'Сомнений снежный ком Несётся к нам из прошлого…'
+	- image = `${data.general.baseDir}assets/images/poem/13.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem13)

@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Мы порою живем так нелепо…»'
+	- description = 'Мы порою живем так нелепо, Будто вечность в запасе у нас.'
+	- image = `${data.general.baseDir}assets/images/poem/32.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem32)

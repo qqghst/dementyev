@@ -1,0 +1,15 @@
+extends @pug/base
+
+append globals
+	- pageName = 'biography'
+	- title = '“Все начинается с любви”'
+	- description = '&nbsp;'
+	- image = `${data.general.baseDir}assets/images/home/share.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+
+		+biographyCard(data123.biography_1997_2000, data123.biography_1997_2000.key)

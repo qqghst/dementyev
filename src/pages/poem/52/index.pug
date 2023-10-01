@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Рано нас покидают дети…»'
+	- description = 'Рано нас покидают дети. И отсрочек нам не дают.'
+	- image = `${data.general.baseDir}assets/images/poem/52.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem52)

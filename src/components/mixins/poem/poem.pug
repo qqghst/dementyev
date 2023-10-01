@@ -1,0 +1,58 @@
+- const data1 = require('./data.js').default;
+
+mixin poem(data)
+	.poem-section(class=`poem-section-${data.id}`)
+		.poem-section__container
+			.left-side
+				img(src=data.image alt="")
+			.right-side
+				.text-container.editor.editor--poem
+					h1.blue-text!= data.title
+					.poem-container.poem
+						.poem1.poem__text!= data.poem
+					.signature
+						+picture({
+							path: `${baseDir}assets/images/signature`,
+							ext: "svg",
+							onlyDesktop: false,
+							retina: true,
+							mobile: true,
+						})
+					+e.sharing
+						+sharing(true)
+			.arrows-container-mobile.isMobile.for-devices
+				if (data.id > 1)
+					a.prev-page(href=`${baseDir}poem/${data.id - 1}/`)
+						+svg('arrow-left')
+				if (data.id < 75)
+					a.next-page(href=`${baseDir}poem/${data.id + 1}/`)
+						+svg('arrow-left')
+
+	.arrows-container
+		if (data.id > 1)
+			a.prev-page(href=`${baseDir}poem/${data.id - 1}/`)
+				+svg('arrow-left')
+		if (data.id < 75)
+			a.next-page(href=`${baseDir}poem/${data.id + 1}/`)
+				+svg('arrow-right')
+
+	.pagination-container
+		if (data.id > 1)
+			a.prev-page-nav(href=`${baseDir}poem/${data.id - 1}/`)
+				+svg('arrow-left')
+		ul.pagination
+			if (data.id < 6)
+				- for (var i = 1; i <= 9; ++i) {
+					li(class=(data.id === i ? "current" : (i === 8 ? "is-ultra-1" : (i === 9 ? "is-ultra-2" : "")))): a(href=`${baseDir}poem/${i}/`)!= i
+				- }
+			else if (data.id > 71)
+				- for (var i = 67; i <= 75; ++i) {
+					li(class=(data.id === i ? "current" : (i === 68 ? "is-ultra-1" : (i === 67 ? "is-ultra-2" : "")))): a(href=`${baseDir}poem/${i}/`)!= i
+				- }
+			else
+				- for (var i = data.id - 4; i <= data.id + 4; ++i) {
+					li(class=(data.id === i ? "current" : (i === data.id - 3 || i === data.id + 3 ? "is-ultra-1" : (i === data.id - 4 || i === data.id + 4 ? "is-ultra-2" : "")))): a(href=`${baseDir}poem/${i}/`)!= i
+				- }
+		if (data.id < 75)
+			a.next-page-nav(href=`${baseDir}poem/${data.id + 1}/`)
+				+svg('arrow-right')

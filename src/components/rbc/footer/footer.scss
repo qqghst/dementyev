@@ -1,0 +1,384 @@
+.footer {
+	position: relative;
+	z-index: 3;
+	margin-top: auto;
+
+	.icon {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid currentColor;
+		border-radius: 100%;
+		width: vc(30);
+		height: vc(30);
+		color: #c75050;
+		transition: 0.3s ease-out;
+		cursor: pointer;
+
+		svg {
+			transition: 0.3s ease-out;
+		}
+
+		@include devices {
+			width: vc(38);
+			height: vc(38);
+		}
+	}
+
+	.social {
+		position: relative;
+		order: -1;
+		margin-bottom: vc(50);
+		color: #c75050;
+
+		svg {
+			fill: currentColor;
+		}
+
+		.sharing {
+			margin-right: vc(15);
+			border: none;
+			background-color: $color-black;
+			transition: 0.3s ease-out;
+
+			span {
+				display: none;
+			}
+
+			svg {
+				fill: $color-white;
+			}
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			&[data-social='ok'] {
+				svg {
+					width: vc(10);
+					height: vc(15);
+
+					@include desktop-lg {
+						width: vc(17);
+						height: vc(20);
+					}
+				}
+			}
+
+			&[data-social='tg'] {
+				svg {
+					position: relative;
+					left: vc(-2);
+					width: vc(14);
+					height: vc(13);
+
+					@include desktop-lg {
+						width: vc(18);
+						height: vc(16);
+					}
+				}
+			}
+
+			&[data-social='vk'] {
+				svg {
+					width: vc(15);
+					height: vc(8);
+
+					@include desktop-lg {
+						width: vc(20);
+						height: vc(11);
+					}
+				}
+			}
+
+			@include desktop {
+				&:hover {
+					background-color: currentColor;
+				}
+			}
+
+			@include devices {
+				margin-right: vc(18);
+			}
+		}
+
+		.icon {
+			svg {
+				width: vc(14);
+				height: vc(12);
+			}
+		}
+
+		&__wrapper {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+
+			@include desktop {
+				position: absolute;
+				right: 0;
+				top: 0;
+				flex-wrap: nowrap;
+				justify-content: normal;
+				opacity: 0;
+				visibility: hidden;
+				transition: 0.3s ease-out;
+			}
+		}
+
+		&__text {
+			margin-right: vc(25);
+			width: 100%;
+			font-style: normal;
+			font-size: vc(16);
+			line-height: 125%;
+			text-align: center;
+			text-transform: uppercase;
+			color: $color-black;
+
+			@include desktop {
+				display: none;
+				margin-right: vc(25);
+				margin-bottom: 0;
+				width: auto;
+				text-align: left;
+			}
+
+			@include devices {
+				margin-right: 0;
+				margin-bottom: vc(15);
+				font-size: vc(20);
+				line-height: vc(28);
+			}
+		}
+
+		@include desktop {
+			order: 0;
+			margin-bottom: 0;
+
+			&:hover {
+				.social__wrapper {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+	}
+
+	.about {
+		padding-top: vc(30);
+
+		.icon {
+			position: relative;
+			z-index: 2;
+			border: 1px solid currentColor;
+			color: #c75050;
+
+			svg {
+				width: vc(3);
+				height: vc(15);
+				fill: currentColor;
+			}
+		}
+
+		&__advertising {
+			position: relative;
+			z-index: 1;
+			display: inline-block;
+			margin-bottom: vc(27);
+			border-bottom: 1px solid $color-black;
+			font-size: vc(11);
+			line-height: 100%;
+			color: $color-black;
+
+			@include desktop {
+				top: vc(2);
+				margin-bottom: 0;
+				margin-left: vc(10);
+				border-bottom: none;
+				font-size: vc(15);
+				line-height: 130%;
+				color: rgba(0, 0, 0, 0.7);
+			}
+		}
+
+		&__wrapper {
+			position: absolute;
+			left: 0;
+			z-index: 1;
+			opacity: 0;
+			visibility: hidden;
+			transition: 0.3s ease-out;
+
+			@include desktop {
+				position: absolute;
+				left: 50%;
+				right: auto;
+				bottom: vc(40);
+				padding: 0 vc(70) vc(46);
+				transform: translateX(-50%);
+			}
+
+			@include devices {
+				bottom: vc(-88);
+				width: 100%;
+			}
+		}
+
+		&__close {
+			position: absolute;
+			left: 50%;
+			top: vc(-67);
+			border: none;
+			padding: 0;
+			width: vc(37);
+			height: vc(37);
+			background: none;
+			transform: translateX(-50%);
+		}
+
+		&__content {
+			position: relative;
+			border: 1.5px solid#c75050;
+			padding: vc(30) vc(10);
+			width: 100%;
+			text-align: center;
+			background-color: $color-white;
+
+			h2 {
+				margin-bottom: vc(30);
+				font-style: normal;
+				font-size: vc(20);
+				line-height: 150%;
+				text-transform: uppercase;
+
+				@include desktop {
+					margin-bottom: vc(30);
+					font-size: vc(30);
+					line-height: 133%;
+				}
+
+				@include devices {
+					margin-bottom: vc(20);
+				}
+			}
+
+			p {
+				font-size: vc(14);
+				line-height: 198%;
+
+				&:last-child {
+					margin-top: vc(52);
+				}
+
+				@include desktop {
+					font-size: vc(16);
+					line-height: 175%;
+				}
+			}
+
+			@include desktop {
+				padding: vc(50) 0;
+				width: vc(824);
+			}
+
+			@include devices {
+				width: 100%;
+			}
+		}
+
+		.is-show-team & {
+			.about__wrapper {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+
+		@include devices {
+			position: relative;
+			padding-top: vc(20);
+		}
+
+		@include desktop {
+			display: flex;
+			align-items: center;
+			padding-top: 0;
+
+			&:hover {
+				.icon {
+					color: $color-black;
+				}
+
+				.about__wrapper {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+	}
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		padding: vc(99) vc(20) vc(35);
+		text-align: center;
+
+		@include desktop {
+			flex-direction: row;
+			justify-content: space-between;
+			padding: vc(30);
+			text-align: left;
+		}
+	}
+
+	&__button-up {
+		position: absolute;
+		left: 50%;
+		top: 0;
+		border: 1.5px solid#c75050;
+		border-radius: 50%;
+		width: vc(49);
+		height: vc(49);
+		background: $color-white;
+		transform: translateX(-50%);
+	}
+
+	&__subtext {
+		font-size: vc(11);
+		line-height: 100%;
+
+		span {
+			border-bottom: 1px solid $color-black;
+		}
+
+		& + & {
+			margin-top: vc(27);
+		}
+
+		@include devices {
+			line-height: 140%;
+		}
+	}
+
+	&__mobile-block {
+		position: fixed;
+		bottom: 0;
+		z-index: 4;
+		border-top: 1px solid#c75050;
+		padding-top: vc(130);
+		width: 100vw;
+		background-color: $color-white;
+		transform: translateY(100%);
+		transition: 0.4s ease-out;
+
+		.footer__button-up {
+			top: vc(50);
+		}
+
+		&.is-visible {
+			transform: translateY(0);
+		}
+	}
+}

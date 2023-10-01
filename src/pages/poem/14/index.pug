@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Я молод, потому что рядом ты…»'
+	- description = 'Я молод, потому что рядом ты, И вопреки годам, что на пределе'
+	- image = `${data.general.baseDir}assets/images/poem/14.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem14)

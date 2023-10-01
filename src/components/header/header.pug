@@ -1,0 +1,107 @@
+-
+	var nav = [
+		{
+			id: 1,
+			active: false,
+			text: 'Биография поэта',
+			link: `${baseDir}biography/biography-1928-1941/`
+		}, {
+			id: 2,
+			active: false,
+			text: 'Мысли и рассуждения',
+			link: `${baseDir}reasoning/1/`
+		}, {
+			id: 3,
+			active: false,
+			text: 'Стихи и цитаты',
+			link: `${baseDir}poem/1/`
+		}, {
+			id: 4,
+			active: false,
+			text: 'Виртуальный тур по Твери и Дому Поэзии Андрея Дементьева',
+			link: `${baseDir}dement/`
+		}, {
+			id: 5,
+			active: false,
+			text: 'Конкурс стихов молодых поэтов',
+			link: `${baseDir}competition/`
+		}, {
+			id: 6,
+			active: false,
+			text: 'Концерт к юбилею',
+			link: `${baseDir}concert/`
+		}
+	]
+
++b.HEADER.header.js-header
+	+e.wrapper
+		+e.left
+			+e.partners.partners__
+				+e.A.link--aif(href="https://aif.ru" target="_blank")
+					+svg('aif')
+				+e.A.link--pfki(href="https://xn--80aeeqaabljrdbg6a3ahhcl4ay9hsa.xn--p1ai/" target="_blank")
+					+svg('pfki')
+				+e.A.link--poetry-house(href="http://www.dompoezii-tver.ru/" target="_blank")
+					+svg('poetry-house')
+			+e.signature.signature__
+				+e.A.link(href="/")
+					+e.text!= '“<span>Все начинается с любви</span>”'
+			+e.logo.logo__
+				+e.A.link(href="/")
+					+e.picture--desktop
+						+picture({
+							path: `${baseDir}assets/images/logo-blue`,
+							ext: "svg",
+							onlyDesktop: false,
+							retina: true,
+							mobile: true,
+						})
+					+e.picture--mobile
+						+picture({
+							path: `${baseDir}assets/images/logo-mobile`,
+							ext: "svg",
+							onlyDesktop: false,
+							retina: true,
+							mobile: true,
+						})
+		+e.right
+			+b.BUTTON.menu-toggler.js-menu-toggler
+				+e.text Меню
+				+e.lines
+					svg(width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+						+e.PATH.line(fill-rule="evenodd" clip-rule="evenodd" d="M24 12.5H0V11H24V12.5Z" fill="currentColor")
+						+e.PATH.line(fill-rule="evenodd" clip-rule="evenodd" d="M24 17.5H0V16H24V17.5Z" fill="currentColor")
+						+e.PATH.line(fill-rule="evenodd" clip-rule="evenodd" d="M24 7.5H0V6H24V7.5Z" fill="currentColor")
+
+	+e.full-menu.full-menu__.js-full-menu
+		+e.wrapper
+			+e.left
+				+e.NAV.nav.nav__
+					ul
+						each item, index in nav
+							li(class=item.active ? '_active' : undefined)
+								a(href=(item.link ? item.link : '#') target=(item.id === 4 ? "_blank" : undefined))!= item.text
+
+				+e.A.return.return__(href="/")
+					+e.icon
+						+svg('arrow-left')
+					+e.text На главную
+
+				+e.sharing
+					+sharing
+
+				+e.rules.rules__ © 2023. Аргументы и Факты все права защищены.
+
+			+e.right
+				+e.poem.poem__
+					+e.icon
+						+svg('pero')
+					+e.text!= '«Стихи – это тоже поступки. <br> У них свой формат и овал. <br> Хотя они внешне и хрупки, <br> Но в ярости бьют наповал...»'
+					+e.signature
+						+picture({
+							path: `${baseDir}assets/images/signature`,
+							ext: "svg",
+							onlyDesktop: false,
+							retina: true,
+							mobile: true,
+						})

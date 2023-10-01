@@ -1,0 +1,14 @@
+extends @pug/base
+
+append globals
+	- pageName = 'poem'
+	- title = '«Живу то будущим…»'
+	- description = 'Живу то будущим, То прошлым.'
+	- image = `${data.general.baseDir}assets/images/poem/16.jpg`
+
+append vars
+
+block content
+	+router(pageName)
+		include @components/header/header
+		+poem(data1.poem16)

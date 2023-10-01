@@ -1,0 +1,237 @@
+.editor {
+	font-family: $font-roboto-flex;
+	font-size: vc(18);
+	line-height: vc(27);
+
+	h1,
+	h2,
+	h3,
+	h4 {
+		font-family: $font-cormorant-garamond;
+		font-weight: 700;
+		color: $color-rodeo-dust-2;
+
+		span {
+			color: $color-blue;
+		}
+	}
+
+	h1 {
+		margin-bottom: vc(37);
+		font-size: vc(50);
+		line-height: vc(58);
+	}
+
+	h2 {
+		margin-bottom: vc(28);
+		font-size: vc(60);
+		line-height: vc(58);
+	}
+
+	h3 {
+		margin-bottom: vc(30);
+		font-size: vc(40);
+		line-height: vc(48);
+	}
+
+	strong,
+	b {
+		font-weight: 600;
+		font-size: vc(20);
+		line-height: vc(28);
+	}
+
+	strong {
+		display: inline-block;
+		margin-bottom: vc(35);
+	}
+
+	p {
+		&:not(:last-child) {
+			margin-bottom: 16px;
+		}
+	}
+
+	blockquote {
+		position: relative;
+		margin: vc(12) 0;
+		border-top: 1px solid $color-blue;
+		border-bottom: 1px solid $color-blue;
+		padding: vc(42) 0;
+		font-family: $font-cormorant-garamond;
+		font-weight: 700;
+		font-style: italic;
+		font-size: vc(24);
+		line-height: vc(29);
+		color: $color-blue;
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			display: block;
+			margin: 0 auto;
+			width: vc(27);
+			height: vc(24);
+			background-image: url("data:image/svg+xml,%3Csvg width='27' height='24' viewBox='0 0 27 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.9745 0.094487C11.037 0.0314957 11.1308 0 11.2559 0C11.4435 0 11.5998 0.125983 11.7249 0.377948C11.8499 0.629917 11.8187 0.818895 11.6311 0.944881C7.31631 4.59842 4.81501 8.50393 4.12715 12.6614C4.06462 13.0394 4.03335 13.5118 4.03335 14.0787C4.03335 14.5827 4.06462 14.9606 4.12715 15.2126C4.75247 14.7087 5.53413 14.4567 6.47212 14.4567C7.91037 14.4567 9.03596 14.9291 9.84888 15.874C10.6618 16.7559 11.0683 17.8268 11.0683 19.0866C11.0683 20.4724 10.5993 21.6378 9.66128 22.5827C8.72329 23.5276 7.41011 24 5.72173 24C3.90829 24 2.5013 23.4331 1.50078 22.2992C0.500261 21.1654 0 19.5591 0 17.4803C0 16.4094 0.125065 15.3701 0.375195 14.3622C0.875456 11.9055 2.06357 9.41732 3.93955 6.89763C5.87806 4.31496 8.22303 2.04724 10.9745 0.094487ZM25.7009 0.094487C25.7634 0.0314957 25.8572 0 25.9823 0C26.1699 0 26.3262 0.125983 26.4513 0.377948C26.5763 0.629917 26.5451 0.818895 26.3575 0.944881C22.0427 4.59842 19.5414 8.50393 18.8536 12.6614C18.791 13.0394 18.7598 13.5118 18.7598 14.0787C18.7598 14.5827 18.791 14.9606 18.8536 15.2126C19.4789 14.7087 20.2605 14.4567 21.1985 14.4567C22.6368 14.4567 23.7624 14.9291 24.5753 15.874C25.3882 16.7559 25.7947 17.8268 25.7947 19.0866C25.7947 20.4724 25.3257 21.6378 24.3877 22.5827C23.4497 23.5276 22.1365 24 20.4481 24C18.6347 24 17.2277 23.4331 16.2272 22.2992C15.2267 21.1654 14.7264 19.5591 14.7264 17.4803C14.7264 16.4094 14.8515 15.3701 15.1016 14.3622C15.6019 11.9055 16.79 9.41732 18.666 6.89763C20.6045 4.31496 22.9494 2.04724 25.7009 0.094487Z' fill='%23CAB59B'/%3E%3C/svg%3E%0A");
+			background-position: center;
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-color: $color-white;
+		}
+
+		&::before {
+			top: vc(-12);
+		}
+
+		&::after {
+			bottom: vc(-12);
+		}
+
+		&:not(:first-child) {
+			margin-top: vc(60);
+		}
+
+		/* stylelint-disable-next-line scss/selector-no-redundant-nesting-selector */
+		& + p {
+			margin-top: vc(50);
+		}
+	}
+
+	&--sm {
+		font-size: vc(16);
+		line-height: vc(26);
+
+		p {
+			&:not(:last-child) {
+				margin-bottom: 10px;
+			}
+		}
+	}
+
+	&--poem {
+		text-align: center;
+
+		.poem {
+			&__text {
+				color: $color-black;
+
+				@include devices {
+					font-size: vc(18);
+					line-height: vc(23.1);
+				}
+			}
+		}
+	}
+
+	&--reasoning {
+		font-size: vc(100);
+	}
+
+	& + & {
+		margin-top: vc(30);
+	}
+
+	@include devices {
+		font-size: vc(15);
+		line-height: vc(22);
+
+		h1 {
+			font-size: vc(24);
+			line-height: vc(26.07);
+		}
+
+		h2 {
+			margin-bottom: vc(16);
+			font-size: vc(30);
+			line-height: vc(33);
+		}
+
+		h3 {
+			margin-bottom: vc(24);
+			font-size: vc(30);
+			line-height: vc(33);
+		}
+
+		strong,
+		b {
+			font-size: vc(15);
+			line-height: vc(22);
+		}
+
+		strong {
+			margin-bottom: vc(19);
+		}
+
+		blockquote {
+			padding: vc(28) 0;
+			font-size: vc(18);
+			line-height: vc(21.8);
+
+			&::before,
+			&::after {
+				width: vc(67);
+				height: vc(19);
+			}
+		}
+	}
+}
+
+// пока временно так стили прописал
+.reasoning.title {
+	font-family: $font-cormorant-garamond;
+	font-weight: 700;
+	font-size: vc(40);
+	line-height: vc(58);
+	letter-spacing: 0;
+	text-align: left;
+
+	@include devices {
+		font-size: vc(30);
+	}
+}
+
+.reasoning.paragraph {
+	font-family: $font-cormorant-garamond;
+	font-weight: 700;
+	font-style: italic;
+	font-size: vc(28);
+	line-height: vc(34);
+	letter-spacing: 0;
+	text-align: left;
+
+	@include devices {
+		font-size: vc(18);
+		line-height: vc(21.75);
+	}
+}
+
+.reasoning.year {
+	font-family: $font-roboto-flex;
+	font-weight: 600;
+	font-size: vc(20);
+	line-height: vc(28);
+	letter-spacing: 0;
+	text-align: left;
+
+	@include devices {
+		font-size: vc(14);
+		line-height: vc(28);
+	}
+}
+
+.reasoning.links {
+	font-family: $font-roboto-flex;
+	font-weight: 400;
+	font-size: vc(18);
+	line-height: vc(24);
+	letter-spacing: 0;
+	text-align: left;
+	color: $color-white;
+
+	@include devices {
+		font-size: vc(15);
+	}
+}

@@ -1,0 +1,126 @@
+- const data123 = require('../../../assets/ajax/biography/data.js').default;
+
+mixin biographyCard(data, key, number)
+	if (data)
+
+		if (data.arrows)
+			+b.navigation--biography
+				if (data.arrows.prev)
+					+e.arrow--prev(class!= data.firstPage ? '_first-page': undefined)
+						+e.A.link(href!= data.arrows.prev)
+							+svg('arrow-left')
+				if (data.arrows.next)
+					+e.arrow--next(class!= data.lastPage ? '_last-page': undefined)
+						+e.A.link(href!= data.arrows.next)
+							+svg('arrow-left')
+
+		+b.biography(data-page-number!=number ? number : undefined)
+			+e.swiper.swiper#swiperBiography
+				.swiper-wrapper
+					each part in data.parts
+						.swiper-slide
+							+e.container
+								+e.inner
+									+e.left
+										if (part.childhood)
+											+b.childhood
+												+e.picture
+													if (part.slider)
+														+e.swiper(class!=part.sliderClass ? part.sliderClass: 'sliderChildhood')
+															.swiper
+																.swiper-wrapper
+																	each slide in part.slider
+																		.swiper-slide
+																			+picture({
+																				path: `${baseDir}assets/images/biography-article/${slide}`,
+																				ext: "jpg",
+																				onlyDesktop: false,
+																				retina: true,
+																				mobile: false,
+																			})
+																.swiper-button-wrapper
+																	.swiper-button.swiper-button-prev
+																	.swiper-pagination
+																	.swiper-button.swiper-button-next
+													else
+														+picture({
+															path: `${baseDir}assets/images/biography-article/${part.picture}`,
+															ext: "jpg",
+															onlyDesktop: false,
+															retina: true,
+															mobile: false,
+														})
+												+e.content
+													+e.dates!= part.childhood.date
+													+e.subtitle!= part.childhood.subtitle
+										else
+											if (part.slider)
+												+e.swiper(class!=part.sliderClass ? part.sliderClass: 'sliderChildhood')
+													.swiper
+														.swiper-wrapper
+															each slide in part.slider
+																.swiper-slide
+																	+picture({
+																		path: `${baseDir}assets/images/biography-article/${slide}`,
+																		ext: "jpg",
+																		onlyDesktop: false,
+																		retina: true,
+																		mobile: false,
+																	})
+														.swiper-button-wrapper
+															.swiper-button.swiper-button-prev
+															.swiper-pagination
+															.swiper-button.swiper-button-next
+											else
+												+picture({
+													path: `${baseDir}assets/images/biography-article/${part.picture}`,
+													ext: "jpg",
+													onlyDesktop: false,
+													retina: true,
+													mobile: false,
+												})
+									+e.right
+										if (part.content)
+											.editor
+												if (part.content.title)
+													h2!= `«<span>${part.content.title}</span>»`
+
+												if (part.content.strong)
+													strong!= part.content.strong
+
+												if (part.content.blockquote)
+													blockquote!= part.content.blockquote
+
+												if (part.content.text)
+													each text in part.content.text
+														p!= text
+
+										if (part.content.poem)
+											.editor(class=part.content.poem ? 'editor--poem': undefined)
+												if (part.content.poem.title)
+													h3!= `«<span>${part.content.poem.title}</span>»`
+
+												if (part.content.poem.text)
+													+b.poem
+														+e.text!= part.content.poem.text
+
+			+e.nav
+				+e.nav-container
+					ul
+						each item, i in data123.nav
+							li(class!= item.key === key ? 'current' : undefined)
+								a(href!= item.link)!= item.text
+							if i < data123.nav.length - 1
+								li ....
+
+		+b.FOOTER.footer
+			+e.partners.partners__
+				+e.A.link--aif(href="https://aif.ru" target="_blank")
+					+svg('aif')
+				+e.A.link--pfki(href="https://xn--80aeeqaabljrdbg6a3ahhcl4ay9hsa.xn--p1ai/" target="_blank")
+					+svg('pfki')
+				+e.A.link--poetry-house(href="http://www.dompoezii-tver.ru/" target="_blank")
+					+svg('poetry-house')
+			+e.sharing
+				+sharing
+			+e.rules.rules__ © 2023. Аргументы и Факты все права защищены.
